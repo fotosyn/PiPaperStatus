@@ -6,9 +6,9 @@
 
 This is a simple script which allows you to show some usefule device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
-![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/qr-capture.jpg)
-
 That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
+
+![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
 
 1. Display network information including hostname and IP address / port
 2. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
@@ -16,7 +16,7 @@ That said, its application could be used for just about any Raspberry Pi device 
 4. Easy to identify at-a-glance-label
 5. Start time (which gives an indication of device uptime)
 
-![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
+![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/qr-capture.jpg)
 
 ### Getting started:
 [1. What you need](#items-you-will-need) / [2. Getting started](#useful-guides-to-get-started) 
