@@ -4,7 +4,7 @@
 
 This is a simple script which allows you to show some usefule device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
-However, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
+That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
 
 ![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
 
@@ -90,6 +90,12 @@ To ensure that any icon files are loaded in correctly, make sure the pathway is 
 device_path = "/home/<your_user_name>/path-to/pipaperstatus"
 ```
 
+You can also change the device label for the device for quick and easy reference or when glancing at the device from further away.
+
+```
+device_label = "DEVICE LABEL"
+```
+
 Make sure the path reflects where you have installed this script, and that the username matches your own configuration. This will allow you to load in an icon file as part of the display.
 
 ### Making your own icon files
@@ -100,12 +106,6 @@ You can easily do this using any image editing tool that supports Indexed colour
 
 I use [Aseprite](https://www.aseprite.org/) which is a popular tool with pixel artists, although other tools are available including [GIMP](https://www.gimp.org/) and [Adobe Photoshop](https://adobe.com/photoshop). If you have any other suggestions, please let me know and I'll add them to the list for reference.
 
-
-You can also change the device label for the device for quick and easy reference or when glancing at the device from further away.
-
-```
-device_label = "DEVICE LABEL"
-```
 
 [Back to top](#top)
 
