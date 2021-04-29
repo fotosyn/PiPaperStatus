@@ -48,7 +48,7 @@ QR codes are generated using [qrcode](https://pypi.org/project/qrcode/) which sh
 
 # Useful guides to get started
 
-> Here are some useful resources. It's worthwhile taking the time to explore these pages as they will help you get your Raspberry Pi up and running for the first time. If you're familiar with all of this you may wish to [skip this part](#setting-up-the-camera)
+> Here are some useful resources. It's worthwhile taking the time to explore these pages as they will help you get your Raspberry Pi up and running for the first time. If you're familiar with all of this you may wish to [skip this part](#configuring-the-script)
 
 [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up)
 Here you’ll learn about your Raspberry Pi, what things you need to use it, and how to set it up.
