@@ -4,7 +4,7 @@
 
 ![\[Pi Paper status installed on Raspberry Pi Zero camera rigs\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-installed.jpg)
 
-This is a simple script which allows you to show some useful device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
+This is a simple script that allows you to show some useful device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
 That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
 
@@ -33,7 +33,7 @@ That said, its application could be used for just about any Raspberry Pi device 
 
 # Items you will need
 
-The mix of configuations is extensive, and can run on any type of Raspberry Pi that has 40-pin GPIO headers, including (Raspberry Pi 2,3,4 and Zero)
+The range of configurations are extensive, and can run on any type of Raspberry Pi that has 40-pin GPIO headers, including (Raspberry Pi 2,3,4 and Zero)
 
 1. A Raspberry Pi computer (any model) with network connectivity.
 2. An SD card. Most models now take the Micro SD type although some work with standard sized SD cards.
@@ -151,7 +151,7 @@ See [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/
 
 **2. Update Python3 to version 3.7.0**
 
-Alternatively, you can update your version of Python3. Be aware that this will a fair amount of time and involves a number of steps that need to be followed in this specific order. To update to the newest version with the following commands:
+Alternatively, you can update your version of Python3. Be aware that this will take a fair amount of time and involves a number of steps that need to be followed in this specific order. To update to the newest version with the following commands:
 
 **Download and extract the latest version of Python3 logged in as root**
 
