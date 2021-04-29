@@ -106,6 +106,8 @@ You can also change the device label for the device for quick and easy reference
 device_label = "DEVICE LABEL"
 ```
 
+[Back to top](#top)
+
 ---
 
 # Running the script
@@ -118,6 +120,8 @@ python3 pi-status.py
 
 After a brief pause, the display will flicker and show your information. It's also really useful to bundle this as part of any device startup, which means it will automatically update when you start or reset the Raspberry Pi itself.
 
+
+[Back to top](#top)
 
 ---
 
@@ -195,3 +199,4 @@ python3 --version
 
 Thanks to [Samx18](https://samx18.io/blog/2018/09/05/python3_raspberrypi.html) for the original guide to this detail. **Perform a reboot of the Pi to be doubly sure that this has been applied.** 
 
+[Back to top](#top)
