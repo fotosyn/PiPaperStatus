@@ -1,1 +1,106 @@
-# PiPaperStatus
+# Pi Paper Status
+
+### A guide to setting up the Pimoroni Inky pHAT with a Raspberry Pi
+
+This is a simple script which allows you to show some usefule device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
+
+However, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
+
+1. Display network information including hostname and IP address / port
+2. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
+3. Display an app icon of your choosing
+4. Easy to identify at-a-glance-label
+5. Start time (which gives an indication of device uptime)
+
+### Getting started:
+[1. What you need](#items-you-will-need) / [2. Getting started](#useful-guides-to-get-started) 
+
+### Installing the script:
+
+### Additional setup
+
+[Back to top](#top)
+
+---
+
+# Items you will need
+
+The mix of configuations is extensive, and can run on any type of Raspberry Pi that has 40-pin GPIO headers, including (Raspberry Pi 2,3,4 and Zero)
+
+1. A Raspberry Pi computer (any model) with network connectivity.
+2. An SD card. Most models now take the Micro SD type although some work with standard sized SD cards.
+3. All the necessary leads (power supply, HDMI cable, mouse and keyboard, if working from Raspberry Pi OS desktop).
+4. A working network connection.
+5. An e-Ink Paper Display. 
+
+While there are many available, installation can differ from model to model. For the purposes of this example I am using the [Pimoroni Inky pHAT EPD Display](https://shop.pimoroni.com/products/inky-phat)
+
+ I am in no way affiliated with Pimoroni. Their stuff is pretty nice and these were the displays I had available at the time of authoring this script. And they are really easy to get set up and running.
+
+The libraries above, and the example script in this repo also make extensive use of the [Pillow](https://pillow.readthedocs.io/en/stable/) imaging library. There are limitless possibilities and we only scratch the surface here.
+
+QR codes are generated using [qrcode](https://pypi.org/project/qrcode/) which should be installed as part of the Pimoroni Inky pHAT installation.
+
+---
+
+# Useful guides to get started
+
+> Here are some useful resources. It's worthwhile taking the time to explore these pages as they will help you get your Raspberry Pi up and running for the first time. If you're familiar with all of this you may wish to [skip this part](#setting-up-the-camera)
+
+[Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up)
+Here you’ll learn about your Raspberry Pi, what things you need to use it, and how to set it up.
+
+[Using your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-using)
+Learn about Raspberry Pi OS, included software, and how to adjust some key settings to your needs.
+
+ [Remote access using the Terminal/SSH](https://www.raspberrypi.org/documentation/remote-access/)
+It's recommended you take a look at the resources here as you will need to use Terminal and some basic commands to install BerryCam and run the Python script.
+
+[Other Frequently Asked Questions](https://www.raspberrypi.org/documentation/faqs/)
+A wide range of information related to the hardware and software to get up and running with the various models of Raspberry Pi. 
+
+[Raspberry Pi OS](https://downloads.raspberrypi.org/raspios_full_armhf/release_notes.txt) is well maintained and receives regular updates. This may change the instructions here from time to time. If you notice any differences, please let me know by raising an issue and I'll update the documentation, with thanks in advance.
+
+[Pimoroni Inky pHAT installation guide](https://github.com/pimoroni/inky)
+The Inky pHAT resource has a straightforward installation process, plenty of supporting Python examples as well as useful support documentation. It should install dependencies that are used in this source code for QR code generation.
+
+[Pillow Imaging Library](https://pillow.readthedocs.io/en/stable/)
+The Python Imaging Library adds image processing capabilities to your Python interpreter.
+This library provides extensive file format support, an efficient internal representation, and fairly powerful image processing capabilities.
+
+[Back to top](#top)
+
+---
+
+# Configuring the script
+
+> Setup involves editing the Python source code from this repo. If you're unfamiliar with this process, there are tools to help make this easy. [Thonny](https://thonny.org/) which is a popular Python IDE is bundled with the Rpasberry Pi OS Desktop, and is available for MacOS, Linux and Windows. You should also check out alternatives such as [Sublime Text](https://www.sublimetext.com/) and [PyCharm](https://www.jetbrains.com/pycharm/). Or indeed, if you prefer, simply edit in nano or pico in the shell itself.
+
+The `pi-status.py` file has a number of config settings, primarily related to layout for different e-Ink display sizes. Play around with these to suit your own needs.
+
+Most e-Ink displays have max. 3 colours (generally Black and white with either Red or Yellow). In cases where a yellow coloured display is used, red is automatically supplemented within the palette.
+
+To ensure that any icon files are loaded in correctly, make sure the pathway is set correctly in:
+
+```
+device_path = "/home/pi/your/path/"
+```
+
+Make sure the path reflects where you have installed this script, and that the username (in this case shown as `pi`) matches your own configuration. This will allow you to load in an icon file as part of the display.
+
+### Making your own icon files
+
+You can easily do this using any image editing tool that supports Indexed colour spaces. This means a defined number of colours in the palette, saved in the PNG file format. The icons attached in the repo give an example of how these are set up, with the colours set up as White (colour 0), Black (1) and Red / Yellow (2)
+
+I use [Aseprite](https://www.aseprite.org/) which is a popular tool with pixel artists, although other tools are available including [GIMP](https://www.gimp.org/) and [Adobe Photoshop](https://adobe.com/photoshop). If you have any other suggestions, please let me know and I'll add them to the list for reference.
+
+
+You can also change the device label for the device for quick and easy reference or when glancing at the device from further away.
+
+```
+device_label = "DEVICE LABEL"
+```
+
+
+
+

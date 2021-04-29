@@ -19,10 +19,10 @@ device_link = str(device_ip[0]) + ":" + str(device_port)
 
 # Get the hostname (eg. raspberrypi) to present on the display
 device_name = run_cmd("hostname")
-device_path = "/home/pi/berrycam/status/"
+device_path = "/home/pi/your/path/"
 
 # Give your device a legible name which shows in larger text
-device_label = "WIDE"
+device_label = "DEVICE LABEL"
 
 # Get the time this device was started at
 now = datetime.now()
