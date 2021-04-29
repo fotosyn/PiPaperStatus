@@ -6,6 +6,8 @@ This is a simple script which allows you to show some usefule device information
 
 However, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
 
+![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
+
 1. Display network information including hostname and IP address / port
 2. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
 3. Display an app icon of your choosing
@@ -15,7 +17,8 @@ However, its application could be used for just about any Raspberry Pi device do
 ### Getting started:
 [1. What you need](#items-you-will-need) / [2. Getting started](#useful-guides-to-get-started) 
 
-### Installing the script:
+### Using the script:
+[3. Configuring the script](#configuring-the-script) / [4. Running the script](#running-the-script) / [5. Troubleshooting](#troubleshooting)
 
 ### Additional setup
 
@@ -35,7 +38,7 @@ The mix of configuations is extensive, and can run on any type of Raspberry Pi t
 
 While there are many available, installation can differ from model to model. For the purposes of this example I am using the [Pimoroni Inky pHAT EPD Display](https://shop.pimoroni.com/products/inky-phat)
 
- I am in no way affiliated with Pimoroni. Their stuff is pretty nice and these were the displays I had available at the time of authoring this script. And they are really easy to get set up and running.
+ *I am in no way affiliated with Pimoroni*. Their stuff is pretty nice and these were the displays I had available at the time of authoring this script. And they are really easy to get set up and running. If you're using a different type of e-Ink display, you may need to consider additional steps.
 
 The libraries above, and the example script in this repo also make extensive use of the [Pillow](https://pillow.readthedocs.io/en/stable/) imaging library. There are limitless possibilities and we only scratch the surface here.
 
@@ -54,7 +57,7 @@ Here you’ll learn about your Raspberry Pi, what things you need to use it, and
 Learn about Raspberry Pi OS, included software, and how to adjust some key settings to your needs.
 
  [Remote access using the Terminal/SSH](https://www.raspberrypi.org/documentation/remote-access/)
-It's recommended you take a look at the resources here as you will need to use Terminal and some basic commands to install BerryCam and run the Python script.
+It's recommended you take a look at the resources here as you will need to use Terminal and some basic commands to install and run the Python script.
 
 [Other Frequently Asked Questions](https://www.raspberrypi.org/documentation/faqs/)
 A wide range of information related to the hardware and software to get up and running with the various models of Raspberry Pi. 
@@ -92,6 +95,8 @@ Make sure the path reflects where you have installed this script, and that the u
 
 You can easily do this using any image editing tool that supports Indexed colour spaces. This means a defined number of colours in the palette, saved in the PNG file format. The icons attached in the repo give an example of how these are set up, with the colours set up as White (colour 0), Black (1) and Red / Yellow (2)
 
+![\[Editing the icon file\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-iconedit.png)
+
 I use [Aseprite](https://www.aseprite.org/) which is a popular tool with pixel artists, although other tools are available including [GIMP](https://www.gimp.org/) and [Adobe Photoshop](https://adobe.com/photoshop). If you have any other suggestions, please let me know and I'll add them to the list for reference.
 
 
@@ -101,6 +106,92 @@ You can also change the device label for the device for quick and easy reference
 device_label = "DEVICE LABEL"
 ```
 
+---
+
+# Running the script
+
+Pi Paper Status needs to run as a Python process to capture the detail from your Raspberry Pi device, render and display on the e-Ink paper display. In the simplest case, you can do this using:
+
+```
+python3 pi-status.py
+```
+
+After a brief pause, the display will flicker and show your information. It's also really useful to bundle this as part of any device startup, which means it will automatically update when you start or reset the Raspberry Pi itself.
 
 
+---
+
+# Troubleshooting
+
+If you are running an earlier version of Python, pre version 3 then it is necessary to update or install the [latest version](https://www.python.org/downloads/)
+
+### Check your version of Python3
+
+To check the version supply the command
+
+```
+python3 --version
+```
+
+#### Things you can do:
+
+**1. Upgrade your Raspberry Pi OS**
+
+You could install a newer version of Raspberry Pi OS which has newer versions of Python. This is definitely the most direct route to consider if you're blowing the dust off a trusty Pi that's been sitting in the cupboard. 
+
+See [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up) to get the latest version of Raspberry Pi OS and flash to your SD card.
+
+**2. Update Python3 to version 3.7.0**
+
+Alternatively, you can update your version of Python3. Be aware that this will a fair amount of time and involves a number of steps that need to be followed in this specific order. To update to the newest version with the following commands:
+
+**Download and extract the latest version of Python3 logged in as root**
+
+```
+sudo su
+```
+```
+cd /usr/src
+```
+```
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+```
+```
+tar -xf Python-3.7.0.tgz
+```
+
+**Install dependencies**
+
+```
+apt-get update
+```
+```
+apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+```
+
+**Configure and install Python 3 (this part may take some time)**
+
+```
+cd Python-3.7.0
+```
+```
+./configure --enable-optimizations
+```
+```
+make altinstall
+```
+
+**Update the link to the newly installed version of Python**
+
+```
+ln -s /usr/local/bin/python3.7 /usr/local/bin/python3
+```
+
+**Check the version of Python (should return 3.7.0)**
+
+```
+python3 --version
+```
+
+Thanks to [Samx18](https://samx18.io/blog/2018/09/05/python3_raspberrypi.html) for the original guide to this detail. **Perform a reboot of the Pi to be doubly sure that this has been applied.** 
 
