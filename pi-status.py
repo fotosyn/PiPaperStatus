@@ -40,6 +40,7 @@ font_size = 14
 text_line = font_size
 qr_width = 50
 
+
 # Sometimes it's nice to know what's going on. Some of the older displays output at the lowest res.
 # Newer SSD1608 units will ouput at 250 x 122
 print(inky_display.resolution)
