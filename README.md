@@ -21,6 +21,7 @@ However, its application could be used for just about any Raspberry Pi device do
 [3. Configuring the script](#configuring-the-script) / [4. Running the script](#running-the-script) / [5. Troubleshooting](#troubleshooting)
 
 ### Additional setup
+[6. Autostart Pi Paper Status on boot](#other-things-to-try) 
 
 [Back to top](#top)
 
@@ -86,10 +87,10 @@ Most e-Ink displays have max. 3 colours (generally Black and white with either R
 To ensure that any icon files are loaded in correctly, make sure the pathway is set correctly in:
 
 ```
-device_path = "/home/pi/your/path/"
+device_path = "/home/<your_user_name>/path-to/pipaperstatus"
 ```
 
-Make sure the path reflects where you have installed this script, and that the username (in this case shown as `pi`) matches your own configuration. This will allow you to load in an icon file as part of the display.
+Make sure the path reflects where you have installed this script, and that the username matches your own configuration. This will allow you to load in an icon file as part of the display.
 
 ### Making your own icon files
 
@@ -198,5 +199,31 @@ python3 --version
 ```
 
 Thanks to [Samx18](https://samx18.io/blog/2018/09/05/python3_raspberrypi.html) for the original guide to this detail. **Perform a reboot of the Pi to be doubly sure that this has been applied.** 
+
+---
+
+# Other things to try
+
+### Autostart Pi Paper Status on boot
+
+If you regularly use your Raspberry Pi, set this script to launch automatically when the Pi is booted. This is quite an easy process and is particularly useful if you want to be able to plug your Pi in to power headless, and have it run each time without configuration or a manual start.
+
+For more information on editing the `rc.local` file please refer to the [Raspberry Pi documentation](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md)
+
+On your Pi, edit the file /etc/rc.local using the editor of your choice. You must edit with root, for example:
+
+```
+sudo nano /etc/rc.local
+```
+
+In the line **before** `exit 0` add the following lines. Be sure to reference absolute filenames rather than relative to your `/home` folder replacing `<your_user_name>` with your own user name (in many cases this is `pi`):
+
+```
+cd /home/<your_user_name>/path-to/pi-paper-status
+nohup python3 pi-status.py > pi-status.log
+wait
+```
+
+Save this file `CTRL x` confirming with `Y` and `Enter` then restart your Raspberry Pi. If this has been set up correctly and your e-Ink display should refresh and update once reboot has completed.
 
 [Back to top](#top)
