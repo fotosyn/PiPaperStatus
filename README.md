@@ -2,11 +2,13 @@
 
 ### A guide to setting up an e-Ink Paper status display with a Raspberry Pi
 
+![\[Pi Paper status installed on Raspberry Pi Zero camera rigs\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-installed.jpg)
+
 This is a simple script which allows you to show some usefule device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
-That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
+![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/qr-capture.jpg)
 
-![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
+That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
 
 1. Display network information including hostname and IP address / port
 2. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
@@ -122,7 +124,6 @@ python3 pi-status.py
 ```
 
 After a brief pause, the display will flicker and show your information. It's also really useful to bundle this as part of any device startup, which means it will automatically update when you start or reset the Raspberry Pi itself.
-
 
 [Back to top](#top)
 
