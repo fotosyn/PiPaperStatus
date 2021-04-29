@@ -1,6 +1,6 @@
 # Pi Paper Status
 
-### A guide to setting up the Pimoroni Inky pHAT with a Raspberry Pi
+### A guide to setting up an e-Ink Paper status display with a Raspberry Pi
 
 This is a simple script which allows you to show some usefule device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
