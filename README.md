@@ -14,6 +14,8 @@ That said, its application could be used for just about any Raspberry Pi device 
 4. Easy to identify at-a-glance-label
 5. Start time (which gives an indication of device uptime)
 
+![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
+
 ### Getting started:
 [1. What you need](#items-you-will-need) / [2. Getting started](#useful-guides-to-get-started) 
 
