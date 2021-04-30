@@ -10,10 +10,10 @@ That said, its application could be used for just about any Raspberry Pi device 
 
 ![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
 
-1. Display network information including hostname and IP address / port
-2. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
-3. Display an app icon of your choosing
-4. Easy to identify at-a-glance-label
+1. Display an app icon of your choosing
+2. Easy to identify at-a-glance-label
+3. Present a linkable QR code to allow directory / resource browsing from another device (on the same network) using that device's camera
+4. Display network information including IP address / port and hostname
 5. Start time (which gives an indication of device uptime)
 
 ![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/qr-capture.jpg)
