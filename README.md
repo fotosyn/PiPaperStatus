@@ -2,13 +2,13 @@
 
 ### A guide to setting up an e-Ink Paper status display with a Raspberry Pi
 
-![\[Pi Paper status installed on Raspberry Pi Zero camera rigs\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-installed.jpg)
+![\[Pi Paper status installed on Raspberry Pi Zero camera rigs\]](https://github.com/fotosyn/PiPaperStatus/blob/main/assets/pi-status-installed.jpg)
 
 This is a simple script that allows you to show some useful device information for those Raspberry Pi's you have running behind the scenes to make things happen. It is inspired from setup of the [BerryCam for Raspberry Pi](https://berrycam.io) camera units that I regularly access on my own home network and most of the examples illustrated here cover this application. 
 
 That said, its application could be used for just about any Raspberry Pi device doing any type of function. The code is fairly simple and easily customised to suit your needs. Out of the box (or should I say, repo) it will do the following:
 
-![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-output.png)
+![\[Pi Paper status view\]](https://github.com/fotosyn/PiPaperStatus/blob/main/assets/pi-status-output.png)
 
 1. Display an app icon of your choosing
 2. Easy to identify at-a-glance-label
@@ -16,7 +16,7 @@ That said, its application could be used for just about any Raspberry Pi device 
 4. Display network information including IP address / port and hostname
 5. Start time (which gives an indication of device uptime)
 
-![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/qr-capture.jpg)
+![\[QR Capture\]](https://github.com/fotosyn/PiPaperStatus/blob/main/assets/qr-capture.jpg)
 
 ### Getting started:
 [1. What you need](#items-you-will-need) / [2. Getting started](#useful-guides-to-get-started) 
@@ -106,7 +106,7 @@ Make sure the path reflects where you have installed this script, and that the u
 
 You can easily do this using any image editing tool that supports Indexed colour spaces. This means a defined number of colours in the palette, saved in the PNG file format. The icons attached in the repo give an example of how these are set up, with the colours set up as White (colour 0), Black (1) and Red / Yellow (2)
 
-![\[Editing the icon file\]](https://github.com/fotosyn/PiPaperStatus/blob/main/pi-status-iconedit.png)
+![\[Editing the icon file\]](https://github.com/fotosyn/PiPaperStatus/blob/main/assets/pi-status-iconedit.png)
 
 I use [Aseprite](https://www.aseprite.org/) which is a popular tool with pixel artists, although other tools are available including [GIMP](https://www.gimp.org/) and [Adobe Photoshop](https://adobe.com/photoshop). If you have any other suggestions, please let me know and I'll add them to the list for reference.
 
