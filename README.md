@@ -102,6 +102,20 @@ device_label = "DEVICE LABEL"
 
 Make sure the path reflects where you have installed this script, and that the username matches your own configuration. This will allow you to load in an icon file as part of the display.
 
+
+### Install the Roboto typeface
+
+This will allow you to render the text in Roboto, which is a nice clear font to render on the Inky display, with a wide selection of weights and styles. Of course, you can use any other font you wish from the various repositories, however Roboto is easily downloaded and set up. 
+
+Installing Roboto will allow you to run without the need to edit font references within the `pi-status.py` file and is a good starting point. 
+
+```
+sudo apt-get install fonts-roboto
+```
+
+For other languages and scripts, font-noto is a great option. Simply replace `fonts-roboto` with `fonts-noto`
+
+
 ### Making your own icon files
 
 You can easily do this using any image editing tool that supports Indexed colour spaces. This means a defined number of colours in the palette, saved in the PNG file format. The icons attached in the repo give an example of how these are set up, with the colours set up as White (colour 0), Black (1) and Red / Yellow (2)

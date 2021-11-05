@@ -86,8 +86,8 @@ device_qr = qr.make_image(fill='black', back_color='white')
 device_qr.thumbnail(qr_size)
 
 # Define some decent system fonts for the display
-label_font = ImageFont.truetype("Piboto-Bold.ttf", font_size * 2)
-detail_font = ImageFont.truetype("PibotoCondensed-Regular.ttf", font_size)
+label_font = ImageFont.truetype("Roboto-Bold.ttf", font_size * 2)
+detail_font = ImageFont.truetype("RobotoCondensed-Regular.ttf", font_size)
 
 # Start the render process
 img = Image.new('P', inky_display.resolution)
